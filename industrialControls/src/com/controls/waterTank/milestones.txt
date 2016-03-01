@@ -1,0 +1,5 @@
+- limit control`s fade in and out effect
+- min controlAlarmlevel
+- VISIBLE LEVEL CONTROLS
+- add builder api
+-  interact markers with serAlarmValue()
