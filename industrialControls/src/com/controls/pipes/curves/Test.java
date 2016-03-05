@@ -7,13 +7,15 @@ package com.controls.pipes.curves;
 
 import com.controls.util.CurveDirection;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import static javafx.application.Application.launch;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 /**
  *
@@ -22,15 +24,14 @@ import javafx.stage.Stage;
 public class Test extends Application {
 
     private static int noOfNodes = 0;
-    private boolean llena = true;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         Group root = new Group();
 
-        Curve curve = new Curve(null, CurveDirection.RIGHT_DOWN, 200, 200, 150, 120, 35, 1.15);
-
-        root.getChildren().addAll(curve);
+        Curve curve = new Curve(null, CurveDirection.TOP_LEFT, 200, 200, 150, 120, 35, 1.15);
+        Circle circle = new Circle(curve.getEndPoint().getX(), curve.getEndPoint().getY(), 7, Color.BROWN);
+        root.getChildren().addAll(curve, circle);
         Scene scene = new Scene(root, 600, 600);
         primaryStage.setScene(scene);
         primaryStage.show();

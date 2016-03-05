@@ -62,7 +62,7 @@ public class CurveFour extends SkinBase<Curve> implements Skin<Curve>, Drawer {
         EDGE = getSkinnable().getEDGE();
 
         switch (direction) {
-            case LEFT_DOWN_2:
+            case LEFT_BOTTOM:
                 //
                 double endX = START_X;
                 double endY = START_Y;

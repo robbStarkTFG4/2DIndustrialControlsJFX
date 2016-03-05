@@ -11,6 +11,6 @@ package com.controls.util;
  */
 public enum CurveDirection implements Direction {
 
-    RIGHT_DOWN, RIGHT_UP, LEFT_DOWN, LEFT_UP, UP_LEFT, LEFT_UP_2, LEFT_DOWN_2, UP_RIGHT, TOP_LEFT//CURVES
+    RIGHT_BOTTOM, RIGHT_TOP, LEFT_BOTTOM, LEFT_TOP, BOTTOM_LEFT, LEFT_UP_2, TOP_RIGHT, TOP_LEFT//CURVES
 
 }

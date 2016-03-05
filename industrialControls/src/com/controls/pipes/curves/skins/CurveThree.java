@@ -6,6 +6,7 @@
 package com.controls.pipes.curves.skins;
 
 import com.controls.pipes.curves.Curve;
+import com.controls.util.CurveDirection;
 import com.controls.util.Drawer;
 import javafx.scene.control.Skin;
 import javafx.scene.control.SkinBase;
@@ -38,8 +39,11 @@ public class CurveThree extends SkinBase<Curve> implements Skin<Curve>, Drawer {
     private double H; //height
     private double T; // pipe diameter
 
-    public CurveThree(Curve control) {
+    private CurveDirection direction;
+
+    public CurveThree(Curve control, CurveDirection direction) {
         super(control);
+        this.direction = direction;
         init();
         initGraphics();
         //registerListeners();
@@ -59,6 +63,30 @@ public class CurveThree extends SkinBase<Curve> implements Skin<Curve>, Drawer {
         T = getSkinnable().getT();
         AV = getSkinnable().getAV();
         EDGE = getSkinnable().getEDGE();
+
+        switch (direction) {
+            case TOP_LEFT:
+                //
+                double endX = START_X;
+                double endY = START_Y;
+
+                double ct = H / 8;
+
+                double x = (((START_X + (H / 8)) + ((W - ((START_X + (H / 8)) - START_X) - T) / 2)) + ((W - ((START_X + (H / 8)) - START_X) - T) / 2)) - (EDGE * T);
+                double x2 = START_X + W - T - EDGE * T;
+
+                START_X = endX - W + T + EDGE * T;
+                System.out.println("x= " + x);
+                System.out.println("x2= " + x2);
+
+                double y = START_Y + (EDGE * T) - (H - ((START_Y + (T * AV)) - (START_Y + (EDGE * T))) - (H / 8)) - (H / 8);
+                double y2 = START_Y - H + T * AV;
+                START_Y = endY + H - T * AV;
+
+                System.out.println("y= " + y);
+                System.out.println("y2= " + y2);
+                break;
+        }
 
         Pane root = new Pane();
 
@@ -131,7 +159,8 @@ public class CurveThree extends SkinBase<Curve> implements Skin<Curve>, Drawer {
         neck2.setFill(neck2Gradient);
         neck2.setStroke(Color.web("#727272"));
 
-        root.getChildren().addAll(neck1, body, neck2);
+        Circle circle = new Circle(x - (EDGE * T), START_Y + (EDGE * T) - (restanteY) - (H / 8), 7, Color.YELLOWGREEN);
+        root.getChildren().addAll(neck1, body, neck2, circle);
         this.getChildren().setAll(root);
     }
 

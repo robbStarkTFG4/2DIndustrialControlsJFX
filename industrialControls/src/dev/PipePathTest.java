@@ -27,11 +27,13 @@ public class PipePathTest extends Application {
 
         PipePath path = new PipePath(root, 200, 300);
         path.add(new RectElement(RectDirection.LEFT_RIGHT, 100));
-        path.add(new CurveElement(CurveDirection.LEFT_UP));// anterior: RIGHT_UP
-        path.add(new CurveElement(CurveDirection.UP_RIGHT));//  anterior: LEFT_DOWN
-        path.add(new CurveElement(CurveDirection.RIGHT_DOWN));
-        path.add(new RectElement(RectDirection.TOP_DOWN, 60));
+        path.add(new CurveElement(CurveDirection.LEFT_TOP));// anterior: RIGHT_UP
+        path.add(new CurveElement(CurveDirection.TOP_RIGHT));//  anterior: LEFT_DOWN
+        path.add(new CurveElement(CurveDirection.RIGHT_BOTTOM));
         path.add(new CurveElement(CurveDirection.TOP_LEFT));
+        //path.add(new RectElement(RectDirection.RIGHT_LEFT, 0));
+        path.add(new CurveElement(CurveDirection.LEFT_BOTTOM));
+        path.add(new RectElement(RectDirection.TOP_DOWN, 0));
 
         Scene scene = new Scene(root, 800, 600);
         stage.setScene(scene);

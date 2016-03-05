@@ -180,8 +180,8 @@ public class ScadaTanque2 extends Application {
         PipePath path = new PipePath(root, 460, 620);
         path.setH(60);
         path.add(new RectElement(RectDirection.LEFT_RIGHT, 90));
-        path.add(new CurveElement(CurveDirection.RIGHT_UP));
-        path.add(new CurveElement(CurveDirection.UP_LEFT, "boro"));
+        path.add(new CurveElement(CurveDirection.RIGHT_TOP));
+        path.add(new CurveElement(CurveDirection.BOTTOM_LEFT, "boro"));
         path.add(new CurveElement(CurveDirection.LEFT_UP_2, "neck"));
         path.add(new DeviceElement(RectDirection.DOWN_TOP, DeviceType.WATER_METER, "w1"));
 
@@ -198,7 +198,7 @@ public class ScadaTanque2 extends Application {
         com2 = (Compuerta) path.getNodeMap().get("comp2");
 
         path.add(new RectElement(RectDirection.DOWN_TOP, 2));
-        path.add(new CurveElement(CurveDirection.LEFT_DOWN, "touchi"));
+        path.add(new CurveElement(CurveDirection.LEFT_BOTTOM, "touchi"));
 
         PipePath path2 = new PipePath(root, 541, 360);
         path2.setH(60);
@@ -217,13 +217,13 @@ public class ScadaTanque2 extends Application {
         com3 = (Compuerta) path2.getNodeMap().get("comp3");
 
         path2.add(new RectElement(RectDirection.DOWN_TOP, 22.5));
-        path2.add(new CurveElement(CurveDirection.UP_LEFT, "left1"));
-        path2.add(new CurveElement(CurveDirection.LEFT_DOWN_2, "down1"));
+        path2.add(new CurveElement(CurveDirection.BOTTOM_LEFT, "left1"));
+        path2.add(new CurveElement(CurveDirection.LEFT_BOTTOM, "down1"));
 
         PipePath path3 = new PipePath(root, 360, 619);
         path3.setH(60);
         path3.add(new RectElement(RectDirection.DOWN_TOP, 90));
-        path3.add(new CurveElement(CurveDirection.UP_LEFT));
+        path3.add(new CurveElement(CurveDirection.BOTTOM_LEFT));
         path3.add(new RectElement(RectDirection.RIGHT_LEFT, 121));
         path3.add(new CurveElement(CurveDirection.LEFT_UP_2));
         path3.add(new DeviceElement(RectDirection.DOWN_TOP, DeviceType.COMPUERTA, "comp4"));
@@ -237,7 +237,7 @@ public class ScadaTanque2 extends Application {
         com4 = (Compuerta) path3.getNodeMap().get("comp4");
 
         path3.add(new RectElement(RectDirection.DOWN_TOP, 1));
-        path3.add(new CurveElement(CurveDirection.LEFT_DOWN, "llegada"));
+        path3.add(new CurveElement(CurveDirection.LEFT_BOTTOM, "llegada"));
 
         Curve arrive = (Curve) path3.getNodeMap().get("llegada");
         arrive.setW(60);

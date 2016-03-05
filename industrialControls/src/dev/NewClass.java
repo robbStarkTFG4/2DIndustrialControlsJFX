@@ -28,14 +28,14 @@ public class NewClass extends Application {
         Group root = new Group();
 
         PipePath path = new PipePath(root, 100, 200);
-        path.add(new CurveElement(CurveDirection.RIGHT_DOWN));
-        path.add(new CurveElement(CurveDirection.LEFT_UP));
-        path.add(new CurveElement(CurveDirection.RIGHT_UP));
-        path.add(new CurveElement(CurveDirection.LEFT_DOWN));
-        path.add(new CurveElement(CurveDirection.RIGHT_DOWN));
-        path.add(new CurveElement(CurveDirection.LEFT_UP));
+        path.add(new CurveElement(CurveDirection.RIGHT_BOTTOM));
+        path.add(new CurveElement(CurveDirection.LEFT_TOP));
+        path.add(new CurveElement(CurveDirection.RIGHT_TOP));
+        path.add(new CurveElement(CurveDirection.LEFT_BOTTOM));
+        path.add(new CurveElement(CurveDirection.RIGHT_BOTTOM));
+        path.add(new CurveElement(CurveDirection.LEFT_TOP));
         path.add(new RectElement(RectDirection.LEFT_RIGHT, 100));
-        path.add(new CurveElement(CurveDirection.RIGHT_UP));
+        path.add(new CurveElement(CurveDirection.RIGHT_TOP));
         path.add(new RectElement(RectDirection.DOWN_TOP, 20));
         //path.add(new TElement());
         path.add(new DeviceElement(RectDirection.DOWN_TOP, DeviceType.WATER_METER));

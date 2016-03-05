@@ -66,9 +66,9 @@ public class CurveOne extends SkinBase<Curve> implements Skin<Curve>, Drawer {
         EDGE = getSkinnable().getEDGE();
 
         switch (direction) {
-            case RIGHT_DOWN:
+            case RIGHT_BOTTOM:
                 break;
-            case UP_LEFT:
+            case BOTTOM_LEFT:
                 double endX = START_X;
                 double endY = START_Y;
 

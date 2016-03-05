@@ -64,7 +64,7 @@ public class CurveTwo extends SkinBase<Curve> implements Skin<Curve>, Drawer {
         EDGE = getSkinnable().getEDGE();
 
         switch (direction) {
-            case LEFT_UP:
+            case LEFT_TOP:
                 break;
             case LEFT_UP_2:
                 //

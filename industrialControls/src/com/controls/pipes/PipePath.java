@@ -115,10 +115,10 @@ public class PipePath {
     }
 
     private void jointPoint() {
-        //Circle circle = new Circle(startXproperty.get(), startYproperty.get(), 2);
-        //circle.setFill(Color.RED);
+        Circle circle = new Circle(startXproperty.get(), startYproperty.get(), 2);
+        circle.setFill(Color.RED);
 
-        //root.getChildren().add(circle);
+        root.getChildren().add(circle);
     }
 
     private void buildCurve(CurveElement element) {

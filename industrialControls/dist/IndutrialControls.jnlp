@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="IndutrialControls.jar" size="687147" download="eager" />
+    <jar href="IndutrialControls.jar" size="688457" download="eager" />
     <jar href="lib\CanvasLed-0.3.6.jar" size="14846" download="eager" />
     <jar href="lib\Common-0.3.6.jar" size="83319" download="eager" />
     <jar href="lib\Fonts-0.3.6.jar" size="728242" download="eager" />
