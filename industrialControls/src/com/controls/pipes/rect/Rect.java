@@ -44,9 +44,10 @@ public class Rect extends Control implements PointLocator {
         switch (direction) {
             case TOP_DOWN:
                 //
-                EndPointX = startX + EDGE * T - EDGE * T;
+                EndPointX = this.startX - EDGE * T + EDGE * T;
+                ;
 
-                EndPointY = startY - H / 8 - H + 2 * H / 8 - length - (H / 8);
+                EndPointY = startY + H / 8 + H - 2 * H / 8 + Length + (H / 8);
                 this.endPoint = new Point(EndPointX, EndPointY);
                 break;
             case DOWN_TOP:

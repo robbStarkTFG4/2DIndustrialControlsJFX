@@ -199,7 +199,7 @@ public class ScadaTanque extends Application {
         com2 = (Compuerta) path.getNodeMap().get("comp2");
 
         path.add(new RectElement(RectDirection.DOWN_TOP, 2));
-        path.add(new CurveElement(CurveDirection.LEFT_BOTTOM, "touchi"));
+        path.add(new CurveElement(CurveDirection.BOTTOM_RIGHT, "touchi"));
 
         PipePath path2 = new PipePath(root, 541, 360);
         path2.setH(60);
@@ -237,7 +237,7 @@ public class ScadaTanque extends Application {
         com4 = (Compuerta) path3.getNodeMap().get("comp4");
 
         path3.add(new RectElement(RectDirection.DOWN_TOP, 1));
-        path3.add(new CurveElement(CurveDirection.LEFT_BOTTOM, "llegada"));
+        path3.add(new CurveElement(CurveDirection.BOTTOM_RIGHT, "llegada"));
 
         Curve arrive = (Curve) path3.getNodeMap().get("llegada");
         arrive.setW(60);

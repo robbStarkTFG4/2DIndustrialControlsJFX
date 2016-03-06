@@ -57,7 +57,7 @@ public class Curve extends Control implements PointLocator {
         double EndPointY;
         double restanteY;
         switch (direction1) {
-            case RIGHT_BOTTOM:
+            case LEFT_BOTTOM:
                 //
                 restanteX = W1 - (H1 / 8);
                 double d = 0.60 * restanteX;
@@ -82,7 +82,7 @@ public class Curve extends Control implements PointLocator {
                 EndPointY = startY1 + (EDGE * T1) - (restanteY) - (H1 / 8);
                 this.endPoint = new Point(EndPointX, EndPointY);
                 break;
-            case LEFT_BOTTOM:
+            case RIGHT_BOTTOM:
                 double endX3 = startX1;
                 double endY3 = startY1;
                 EndPointX = endX3 - W1 - 2 * (H1 / 8);
@@ -151,7 +151,7 @@ public class Curve extends Control implements PointLocator {
                 EndPointY = endY3 + g1 + (3 * (H1 - g1) / 4) + (2 * (H1 - g1) / 4) + (EDGE * T1);
                 this.endPoint = new Point(EndPointX, EndPointY);
                 break;*/
-            case TOP_RIGHT:
+            case BOTTOM_RIGHT:
                 //
                 double E1 = startX1 + (EDGE * T1);
                 restanteX = W1 - ((E1 + (3 * T1)) - startX1 - (H1 / 8));
@@ -165,10 +165,19 @@ public class Curve extends Control implements PointLocator {
                 this.endPoint = new Point(EndPointX, EndPointY);
                 break;
             case TOP_LEFT:
-                //********
-
                 EndPointX = startX - W + T + EDGE * T;
                 EndPointY = startY + H - T * AV;
+                this.endPoint = new Point(EndPointX, EndPointY);
+                break;
+            case TOP_RIGHT:
+                //
+
+                double b = startX1 + T1 * 2;
+                double restante = b - startX1 - (H1 / 8);
+                EndPointX = startX1 + T1 * 2 + restante + (H1 / 8);
+
+                double g = startY1 + (H1 / 8);
+                EndPointY = g + 2 * (4 * H1 / 8) - T1 - (EDGE * T1);
                 this.endPoint = new Point(EndPointX, EndPointY);
                 break;
         }
@@ -179,7 +188,7 @@ public class Curve extends Control implements PointLocator {
     protected Skin<?> createDefaultSkin() {
         System.out.println("crea skin DSADASDASDASD");
         switch (direction) {
-            case RIGHT_BOTTOM:
+            case LEFT_BOTTOM:
                 CurveOne curve = new CurveOne(this, direction);
                 drawer = curve;
                 return curve;
@@ -189,7 +198,7 @@ public class Curve extends Control implements PointLocator {
                 drawer = curve1;
                 return curve1;
 
-            case LEFT_BOTTOM:
+            case RIGHT_BOTTOM:
                 CurveFour curve2 = new CurveFour(this, direction);
                 drawer = curve2;
                 return curve2;
@@ -215,7 +224,7 @@ public class Curve extends Control implements PointLocator {
                 CurveFour curve6 = new CurveFour(this, direction);
                 drawer = curve6;
                 return curve6;*/
-            case TOP_RIGHT:
+            case BOTTOM_RIGHT:
                 CurveFour curve9 = new CurveFour(this, direction);
                 drawer = curve9;
                 return curve9;
@@ -224,6 +233,10 @@ public class Curve extends Control implements PointLocator {
                 CurveThree curve10 = new CurveThree(this, direction);
                 drawer = curve10;
                 return curve10;
+            case TOP_RIGHT:
+                CurveTwo curve99 = new CurveTwo(this, direction);
+                drawer = curve99;
+                return curve99;
             default:
                 return null;
         }

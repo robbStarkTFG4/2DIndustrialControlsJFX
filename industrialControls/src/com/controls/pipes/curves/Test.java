@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import static javafx.application.Application.launch;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import static javafx.application.Application.launch;
 
 /**
  *

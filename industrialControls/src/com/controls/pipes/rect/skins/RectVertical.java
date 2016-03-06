@@ -80,6 +80,7 @@ public class RectVertical extends SkinBase<Rect> implements Skin<Rect> {
                 System.out.println("y2: " + y2);
                 START_Y = endY + H / 8 + H - 2 * H / 8 + L + (H / 8);
                 //START_Y=
+
                 break;
         }
 
